@@ -12,6 +12,7 @@
       	console.log("already played")
       } else {
 		  $(this).attr('data-move', 'x');
+      $(this).append('<div class="move">x</div>');
 	  }
 	});
 }());
