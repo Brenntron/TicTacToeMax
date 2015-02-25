@@ -21,7 +21,7 @@
 	}); //end fb.child
 
 	function changeBoardState(panel, data) {
-      var fbTestGame      = fb.child('games/test'),
+      var fbTestGame      = fb.child('games/test/boardState'),
 	      boardState      = data.boardState,
 	      $boardPosition  = panel.attr('id'),
 	      boardPosition   = {position: $boardPosition};
