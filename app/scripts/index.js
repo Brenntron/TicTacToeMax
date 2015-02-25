@@ -6,6 +6,12 @@
 	fb.child('games/test');
 
 	$('.panel').on('click', function (event) {
-	  $(this).attr('data-move', 'x');
+	  var $panel = $(this);
+
+      if ($panel.attr("data-move")) {
+      	console.log("already played")
+      } else {
+		  $(this).attr('data-move', 'x');
+	  }
 	});
 }());
