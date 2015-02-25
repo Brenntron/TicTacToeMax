@@ -21,21 +21,17 @@
 	}); //end fb.child
 
 	function changeBoardState(panel, data) {
-      var fbTestGame      = fb.child('games/test'),
-	      boardState      = data.boardState,
+    var fbTestGame      = fb.child('games/test/boardState'),
 	      $boardPosition  = panel.attr('id'),
-	      boardPosition   = {position: $boardPosition};
+        position        = 'position' + $boardPosition,
+	      boardPosition   = {};
 
-	      // fbTestGame.set(boardPosition);
+        boardPosition[position] = $boardPosition;
+	      fbTestGame.set(boardPosition);
 
-          console.log(fbTestGame);
-
+        console.log(fbTestGame);
 	      console.log(data);
 
-	      console.log(data.boardState);
+	};
 
-	      boardState.set(boardPosition);
-
-
-	}
 }()); // end IIFE
