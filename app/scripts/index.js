@@ -1,8 +1,7 @@
 (function(){
 	'use strict';
 
-	var fb       = new Firebase('https://tictactoemax.firebaseio.com/')
-	    fbRemove = fb.child('games/test');
+	var fb = new Firebase('https://tictactoemax.firebaseio.com/');
 
 
 	fb.child('games/test').once('value',function (snap) {
@@ -22,14 +21,20 @@
 	}); //end fb.child
 
 	function changeBoardState(panel, data) {
-	  var boardState      = data.boardState,
+      var fbTestGame      = fb.child('games/test'),
+	      boardState      = data.boardState,
 	      $boardPosition  = panel.attr('id'),
-	      boardPosition   = {position: $boardPosition},
-	      fbTestGame      = fb.child('games/test/boardState');
+	      boardPosition   = {position: $boardPosition};
 
-	      fbTestGame.set(boardPosition);
+	      // fbTestGame.set(boardPosition);
+
+          console.log(fbTestGame);
 
 	      console.log(data);
+
+	      console.log(data.boardState);
+
+	      boardState.set(boardPosition);
 
 
 	}
