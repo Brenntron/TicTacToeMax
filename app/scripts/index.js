@@ -8,12 +8,15 @@
 		var data = snap.val();
 
     $('.panel').on('click', function (event) {
-	  var $panel = $(this);
+	  var $panel = $(this),
+        xOrO   = 'x';
+
 
     if ($panel.attr("data-move")) {
       console.log("already played")
     } else {
 		  $(this).attr('data-move', 'x');
+      console.log(this);
       $(this).append('<div class="move">x</div>');
       changeBoardState($panel, data);
   	  }
@@ -28,6 +31,7 @@
 	      boardPosition   = {};
 
         boardPosition[position] = $boardPosition;
+
 	      fbTestGame.update(boardPosition);
 
         console.log(fbTestGame);
