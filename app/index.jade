@@ -9,9 +9,11 @@ html(lang="en-US")
 
   body
   .container
-    .row
+    .row.heading
+      .col-xs-12
       h1 Tic Tac Toe
-      button#newGameButton New Game
+      button#newGame New Game
+    .row.content
       .col-xs-4.panel(id='0')
         p 0
       .col-xs-4.panel(id='1')
@@ -36,7 +38,6 @@ html(lang="en-US")
   // bower:js
   // endbower
   // endbuild
-
   // build:js js/main.min.js
   script(src="/scripts/common.js")
   script(src="/scripts/index.js")
