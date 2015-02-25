@@ -1,0 +1,24 @@
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  background: #f9f9f9;
+}
+
+.container {
+  margin: 1em auto;
+  max-width: 1000px;
+  background: white;
+}
+
+h1 {
+  color: tomato; }
+
+.panel {
+  padding: 10px;
+  min-width: 200px;
+  min-height: 200px;
+  p {
+    border: 1px solid lightgray;
+    text-align: center;
+  }
+}

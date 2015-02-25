@@ -9,13 +9,26 @@ html(lang="en-US")
 
   body
   .container
-    .col-sm-9
-      h1 Tic Tac Toe
-      .log
-    .col-sm-3
-      p
-        img(src='http://img1.wikia.nocookie.net/__cb20140808001953/dogkids-wiki-of-wonder/images/0/05/Doge.png')
-
+    .row
+      h1 Tic Tac Toe 
+      .col-xs-4.panel(data-attr='0')
+        p 0
+      .col-xs-4.panel(data-attr='1')
+        p 1
+      .col-xs-4.panel(data-attr='2')
+        p 2
+      .col-xs-4.panel(data-attr='3')
+        p 3
+      .col-xs-4.panel(data-attr='4')
+        p 4
+      .col-xs-4.panel(data-attr='5')
+        p 5
+      .col-xs-4.panel(data-attr='6')
+        p 6
+      .col-xs-4.panel(data-attr='7')
+        p 7
+      .col-xs-4.panel(data-attr='8')
+        p 8
 
 
   // build:js js/vendor.min.js
