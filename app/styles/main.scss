@@ -1,26 +1,35 @@
 @import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
 
-body {
-  background: #f9f9f9;
-}
+$primary-color: lightgray;
 
-.container {
-  margin: 1em auto;
-  max-width: 1000px;
+body {
   background: white;
 }
 
+.btn {
+  background-color: $primary-color;
+  color: white;
+}
+
+.container {
+  margin: 3em auto;
+  border-radius: 1em;
+  max-width: 400px;
+  background: white;
+  border: 3px solid $primary-color;
+  padding: 0.5em 2em;
+}
+
 h1 {
-  color: tomato; }
+  color: #222; }
 
 .panel {
-  padding: 10px;
-  min-width: 200px;
-  min-height: 200px;
-  p {
-    border: 1px solid lightgray;
-    text-align: center;
-  }
+  background: $primary-color;
+  text-align:center;
+  padding-top: 1em;
+  min-width: 100px;
+  min-height: 100px;
+  width: 100%;
 }
 
 .heading {
@@ -33,7 +42,7 @@ h1 {
 }
 
 .move {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: bold;
   text-align: center;
 }
