@@ -1,0 +1,19 @@
+{
+  "name": "TicTacToeMax",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Brenntron/TicTacToeMax",
+  "description": "This is a chat app/",
+  "main": "index.js",
+  "authors": [
+    "Brenntron"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
