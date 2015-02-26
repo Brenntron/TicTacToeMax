@@ -8,6 +8,7 @@
 
   $('#newGame').on('click', function newGame () {
     	$('.move').remove();
+      $('.panel').removeAttr('data-move');
     });
 
 	    $('.panel').on('click', function (event, data) {
@@ -41,28 +42,28 @@
               piece === 'X'
 		    }
 
-		   	if ($('#0').find('.move').attr('data-move') === piece && $('#1').find('.move').attr('data-move') === piece && $('#2').find('.move').attr('data-move') === piece) {
+		   	if ($('#0').attr('data-move') === piece && $('#1').attr('data-move') === piece && $('#2').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#3').find('.move').attr('data-move') === piece && $('#4').find('.move').attr('data-move') === piece && $('#5').find('.move').attr('data-move') === piece) {
+		   	} else if ($('#3').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#5').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#6').find('.move').attr('data-move') === piece && $('#7').find('.move').attr('data-move') === piece && $('#8').find('.move').attr('data-move') === piece) {
+		   	} else if ($('#6').attr('data-move') === piece && $('#7').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#0').find('.move').attr('data-move') === piece && $('#3').find('.move').attr('data-move') === piece && $('#6').find('.move').attr('data-move') === piece) {
+		   	} else if ($('#0').attr('data-move') === piece && $('#3').attr('data-move') === piece && $('#6').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#1').find('.move').attr('data-move') === piece && $('#4').find('.move').attr('data-move') === piece && $('#7').find('.move').attr('data-move') === piece) {
+		   	} else if ($('#1').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#7').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#2').find('.move').attr('data-move') === piece && $('#5').find('.move').attr('data-move') === piece && $('#8').find('.move').attr('data-move') === piece) {
+		   	} else if ($('#2').attr('data-move') === piece && $('#5').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#0').find('.move').attr('data-move') === piece && $('#4').find('.move').attr('data-move') === piece && $('#8').find('.move').attr('data-move') === piece) {
+		   	} else if ($('#0').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#2').find('.move').attr('data-move') === piece && $('#4').find('.move').attr('data-move') === piece && $('#6').find('.move').attr('data-move') === piece) {
+		   	} else if ($('#2').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#6').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
 		   	}
@@ -114,7 +115,8 @@
       var panelId = key[8];
 
       if (position !== 'undefined') {
-        $('p#' + panelId).append('<div class="move" data-move=' + position + '>' + position + '</div>');
+      $('p#' + panelId).append('<div class="move">' + position + '</div>');
+      $('p#' + panelId).attr('data-move', position);
       }
 
     });
