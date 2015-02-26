@@ -72,15 +72,33 @@
 
 	}); //end fb.child
 
-	function changeBoardState(panel, data) {
-      var fbTestGame      = fb.child('games/test/boardState'),
-	      $boardPosition  = panel.attr('id'),
-          position        = 'position' + $boardPosition,
-	      boardPosition   = {};
+  fb.child('games/test').once('value',function (snap) {
+    var data = snap.val();
 
-          boardPosition[position] = $boardPosition;
+    loadBoardState(data)
+  });
+
+	function changeBoardState(panel, data) {
+      var fbTestGame     = fb.child('games/test/boardState'),
+	        $boardPosition = panel.attr('id'),
+          $boardMove     = panel.attr('data-move'),
+          position       = 'position' + $boardPosition,
+	        boardPosition  = {};
+
+          boardPosition[position] = $boardMove;
 
 	      fbTestGame.update(boardPosition);
 	} //end changeBoardState
+
+  function loadBoardState(data) {
+    var boardState = data.boardState;
+    console.log(boardState);
+
+    _.forEach(boardState, function (position, key) {
+      var panelId = key[8];
+
+      $('p#' + panelId).append('<div class="move">' + position + '</div>');
+    });
+  }
 
 }()); // end IIFE
