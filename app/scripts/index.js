@@ -80,10 +80,10 @@
 
 	function changeBoardState(panel, data) {
       var fbTestGame     = fb.child('games/test/boardState'),
-	        $boardPosition = panel.attr('id'),
+	      $boardPosition = panel.attr('id'),
           $boardMove     = panel.attr('data-move'),
           position       = 'position' + $boardPosition,
-	        boardPosition  = {};
+	      boardPosition  = {};
 
           boardPosition[position] = $boardMove;
 
