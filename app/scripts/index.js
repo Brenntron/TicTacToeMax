@@ -114,7 +114,7 @@
       var panelId = key[8];
 
       if (position !== 'undefined') {
-        $('p#' + panelId).append('<div class="move" data-attr=' + position + '>' + position + '</div>');
+        $('p#' + panelId).append('<div class="move" data-move=' + position + '>' + position + '</div>');
       }
 
     });
