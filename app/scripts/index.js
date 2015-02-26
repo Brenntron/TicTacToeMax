@@ -79,6 +79,23 @@
     loadBoardState(data)
   });
 
+  $('#newGame').on('click', function () {
+        var fbTestGame    = fb.child('games/test/boardState')
+        var newBoardState = {
+                            position0: 'undefined',
+                            position1: 'undefined',
+                            position2: 'undefined',
+                            position3: 'undefined',
+                            position4: 'undefined',
+                            position5: 'undefined',
+                            position6: 'undefined',
+                            position7: 'undefined',
+                            position8: 'undefined'
+                            };
+
+        fbTestGame.set(newBoardState);
+      });
+
 	function changeBoardState(panel, data) {
       var fbTestGame     = fb.child('games/test/boardState'),
 	        $boardPosition = panel.attr('id'),
