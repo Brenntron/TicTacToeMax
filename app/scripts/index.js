@@ -44,28 +44,36 @@
 
 		   	if ($('#0').attr('data-move') === piece && $('#1').attr('data-move') === piece && $('#2').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
-		   		$('.panel').off('click');
+		   		$('.move').remove();
+          $('.panel').removeAttr('data-move');
 		   	} else if ($('#3').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#5').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
-		   		$('.panel').off('click');
+		   		$('.move').remove();
+          $('.panel').removeAttr('data-move');
 		   	} else if ($('#6').attr('data-move') === piece && $('#7').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
-		   		$('.panel').off('click');
+		   		$('.move').remove();
+          $('.panel').removeAttr('data-move');
 		   	} else if ($('#0').attr('data-move') === piece && $('#3').attr('data-move') === piece && $('#6').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
-		   		$('.panel').off('click');
+		   		$('.move').remove();
+         $('.panel').removeAttr('data-move');
 		   	} else if ($('#1').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#7').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
-		   		$('.panel').off('click');
+		   		$('.move').remove();
+          $('.panel').removeAttr('data-move');
 		   	} else if ($('#2').attr('data-move') === piece && $('#5').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
-		   		$('.panel').off('click');
+		   		$('.move').remove();
+          $('.panel').removeAttr('data-move');
 		   	} else if ($('#0').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
-		   		$('.panel').off('click');
+		   		$('.move').remove();
+          $('.panel').removeAttr('data-move');
 		   	} else if ($('#2').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#6').attr('data-move') === piece) {
 		   		alert(piece + ' Wins!');
-		   		$('.panel').off('click');
+		   		$('.move').remove();
+          $('.panel').removeAttr('data-move');
 		   	}
 });
 
