@@ -17,6 +17,7 @@
 		var data = snap.val();
 
 	    $('.panel').on('click', function (event) {
+
 		   	var $panel  = $(this);
 
 	        if ($panel.attr("data-move")) {
@@ -97,7 +98,10 @@
     _.forEach(boardState, function (position, key) {
       var panelId = key[8];
 
-      $('p#' + panelId).append('<div class="move">' + position + '</div>');
+      if (position !== 'undefined') {
+        $('p#' + panelId).append('<div class="move">' + position + '</div>');
+      }
+
     });
   }
 
