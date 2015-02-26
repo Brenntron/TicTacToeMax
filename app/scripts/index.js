@@ -1,40 +1,37 @@
+/* globals $:false */
+
 (function(){
 	'use strict';
 
 	var fb      = new Firebase('https://tictactoemax.firebaseio.com/'),
-        counter = 0;
+      $moves;
 
-        $('#newGame').on('click', newGame
-        )
+  $('#newGame').on('click', function newGame () {
+    	$('.move').remove();
+    });
 
-        function newGame () {
-        	$('.move').remove();
-
-        }
-
-
-	fb.child('games/test').once('value',function (snap) {
-		var data = snap.val();
-
-	    $('.panel').on('click', function (event) {
-
+	    $('.panel').on('click', function (event, data) {
 		   	var $panel  = $(this);
+
+        $moves = $('.move').length || 0;
 
 	        if ($panel.attr("data-move")) {
 		      alert("already played")
 		    }
-		    else if (counter % 2 === 0) {
+		    else if ($moves % 2 === 0) {
 		      $(this).attr('data-move', 'X');
 			  $(this).append('<div class="move">X</div>');
 		      changeBoardState($panel, data);
-		      counter++;
+
 	        }
-		    else if (counter % 2 === 1) {
+		    else if ($moves % 2 === 1) {
 	          $(this).attr('data-move', 'O');
 			  $(this).append('<div class="move">O</div>');
 		      changeBoardState($panel, data);
-	   	      counter++;
+
 		    }
+
+        $moves = $('.move').length;
 
 		    var piece = 'X';
 
@@ -69,14 +66,15 @@
 		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
 		   	}
-        });
+});
 
-	}); //end fb.child
+
+
 
   fb.child('games/test').once('value',function (snap) {
     var data = snap.val();
 
-    loadBoardState(data)
+    loadBoardState(data);
   });
 
   $('#newGame').on('click', function () {
@@ -121,5 +119,6 @@
 
     });
   }
+
 
 }()); // end IIFE
