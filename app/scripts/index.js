@@ -13,7 +13,7 @@
     if ($panel.attr("data-move")) {
       console.log("already played")
     } else {
-		  $(this).attr('data-move', 'x');
+      $(this).attr('data-move', 'x');
       $(this).append('<div class="move">x</div>');
       changeBoardState($panel, data);
   	  }
