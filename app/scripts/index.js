@@ -4,6 +4,14 @@
 	var fb      = new Firebase('https://tictactoemax.firebaseio.com/'),
         counter = 0;
 
+        $('#newGame').on('click', newGame
+        )
+
+        function newGame () {
+        	$('.move').remove();
+
+        }
+
 
 	fb.child('games/test').once('value',function (snap) {
 		var data = snap.val();
@@ -12,67 +20,52 @@
 		   	var $panel  = $(this);
 
 	        if ($panel.attr("data-move")) {
-		      console.log("already played")
+		      alert("already played")
 		    }
 		    else if (counter % 2 === 0) {
-		      $(this).attr('data-move', 'x');
-			  $(this).append('<div class="move">x</div>');
+		      $(this).attr('data-move', 'X');
+			  $(this).append('<div class="move">X</div>');
 		      changeBoardState($panel, data);
 		      counter++;
 	        }
 		    else if (counter % 2 === 1) {
-	          $(this).attr('data-move', 'o');
-			  $(this).append('<div class="move">o</div>');
+	          $(this).attr('data-move', 'O');
+			  $(this).append('<div class="move">O</div>');
 		      changeBoardState($panel, data);
 	   	      counter++;
 		    }
-		   	if ($('#0').attr('data-move') === 'x' && $('#1').attr('data-move') === 'x' && $('#2').attr('data-move') === 'x') {
-		   		alert('X Wins!');
+
+		    var piece = 'X';
+
+		    if (piece === 'X') {
+              piece === 'O'
+		    } else {
+              piece === 'X'
+		    }
+
+		   	if ($('#0').attr('data-move') === piece && $('#1').attr('data-move') === piece && $('#2').attr('data-move') === piece) {
+		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#3').attr('data-move') === 'x' && $('#4').attr('data-move') === 'x' && $('#5').attr('data-move') === 'x') {
-		   		alert('X Wins!');
+		   	} else if ($('#3').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#5').attr('data-move') === piece) {
+		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#6').attr('data-move') === 'x' && $('#7').attr('data-move') === 'x' && $('#8').attr('data-move') === 'x') {
-		   		alert('X Wins!');
+		   	} else if ($('#6').attr('data-move') === piece && $('#7').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
+		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#0').attr('data-move') === 'x' && $('#3').attr('data-move') === 'x' && $('#6').attr('data-move') === 'x') {
-		   		alert('X Wins!');
+		   	} else if ($('#0').attr('data-move') === piece && $('#3').attr('data-move') === piece && $('#6').attr('data-move') === piece) {
+		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#1').attr('data-move') === 'x' && $('#4').attr('data-move') === 'x' && $('#7').attr('data-move') === 'x') {
-		   		alert('X Wins!');
+		   	} else if ($('#1').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#7').attr('data-move') === piece) {
+		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#2').attr('data-move') === 'x' && $('#5').attr('data-move') === 'x' && $('#8').attr('data-move') === 'x') {
-		   		alert('X Wins!');
+		   	} else if ($('#2').attr('data-move') === piece && $('#5').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
+		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#0').attr('data-move') === 'x' && $('#4').attr('data-move') === 'x' && $('#8').attr('data-move') === 'x') {
-		   		alert('X Wins!');
+		   	} else if ($('#0').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#8').attr('data-move') === piece) {
+		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
-		   	} else if ($('#2').attr('data-move') === 'x' && $('#4').attr('data-move') === 'x' && $('#6').attr('data-move') === 'x') {
-		   		alert('X Wins!');
-		   		$('.panel').off('click');
-		   	} else if ($('#0').attr('data-move') === 'o' && $('#1').attr('data-move') === 'o' && $('#2').attr('data-move') === 'o') {
-		   		alert('O Wins!');
-		   		$('.panel').off('click');
-		   	} else if ($('#3').attr('data-move') === 'o' && $('#4').attr('data-move') === 'o' && $('#5').attr('data-move') === 'o') {
-		   		alert('O Wins!');
-		   		$('.panel').off('click');
-		   	} else if ($('#6').attr('data-move') === 'o' && $('#7').attr('data-move') === 'o' && $('#8').attr('data-move') === 'o') {
-		   		alert('O Wins!');
-		   		$('.panel').off('click');
-		   	} else if ($('#0').attr('data-move') === 'o' && $('#3').attr('data-move') === 'o' && $('#6').attr('data-move') === 'o') {
-		   		alert('O Wins!');
-		   		$('.panel').off('click');
-		   	} else if ($('#1').attr('data-move') === 'o' && $('#4').attr('data-move') === 'o' && $('#7').attr('data-move') === 'o') {
-		   		alert('O Wins!');
-		   		$('.panel').off('click');
-		   	} else if ($('#2').attr('data-move') === 'o' && $('#5').attr('data-move') === 'o' && $('#8').attr('data-move') === 'o') {
-		   		alert('O Wins!');
-		   		$('.panel').off('click');
-		   	} else if ($('#0').attr('data-move') === 'o' && $('#4').attr('data-move') === 'o' && $('#8').attr('data-move') === 'o') {
-		   		alert('O Wins!');
-		   		$('.panel').off('click');
-		   	} else if ($('#2').attr('data-move') === 'o' && $('#4').attr('data-move') === 'o' && $('#6').attr('data-move') === 'o') {
-		   		alert('O Wins!');
+		   	} else if ($('#2').attr('data-move') === piece && $('#4').attr('data-move') === piece && $('#6').attr('data-move') === piece) {
+		   		alert(piece + ' Wins!');
 		   		$('.panel').off('click');
 		   	}
         });
