@@ -26,7 +26,6 @@ h1 {
 .panel {
   background: $primary-color;
   text-align:center;
-  padding-top: 1em;
   min-width: 100px;
   min-height: 100px;
   width: 100%;
@@ -45,4 +44,7 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
+  img {
+    max-width: 100%;
+  }
 }

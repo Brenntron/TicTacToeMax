@@ -20,13 +20,13 @@
     }
     else if ($moves % 2 === 0) {
       $(this).attr('data-move', 'X');
-	  $(this).append('<div class="move">X</div>');
+	  $(this).append('<div class="move"><img src="http://vignette1.wikia.nocookie.net/knightsanddragons/images/c/c2/Peanut-butter-jelly-time.gif"></div>');
       changeBoardState($panel, data);
 
       }
     else if ($moves % 2 === 1) {
         $(this).attr('data-move', 'O');
-	  $(this).append('<div class="move">O</div>');
+	  $(this).append('<div class="move"><img src="http://images.clipartpanda.com/peanut-butter-sandwich-no-jelly-1396466202672-tumblr_m1jpelUzm71qbe0gto1_400.gif"></div>');
       changeBoardState($panel, data);
 
     }
@@ -113,9 +113,21 @@
     _.forEach(boardState, function (position, key) {
       var panelId = key[8];
 
-      if (position !== 'undefined') {
+      // if (position !== 'undefined') {
+      //   // $('p#' + panelId).append('<div class="move" data-attr=' + position + '>' + position + '</div>');
+      // $('p#' + panelId).append('<div class="move">' + position + '</div>');
+      // $('p#' + panelId).attr('data-move', position);
+      // }
+
+      if (position === 'X') {
         // $('p#' + panelId).append('<div class="move" data-attr=' + position + '>' + position + '</div>');
-      $('p#' + panelId).append('<div class="move">' + position + '</div>');
+      $('p#' + panelId).append('<div class="move"><img src="http://vignette1.wikia.nocookie.net/knightsanddragons/images/c/c2/Peanut-butter-jelly-time.gif"></div>');
+      $('p#' + panelId).attr('data-move', position);
+      }
+
+      if (position === 'O') {
+        // $('p#' + panelId).append('<div class="move" data-attr=' + position + '>' + position + '</div>');
+      $('p#' + panelId).append('<div class="move"><img src="http://images.clipartpanda.com/peanut-butter-sandwich-no-jelly-1396466202672-tumblr_m1jpelUzm71qbe0gto1_400.gif"></div>');
       $('p#' + panelId).attr('data-move', position);
       }
 
