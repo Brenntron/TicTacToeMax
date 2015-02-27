@@ -68,8 +68,9 @@
     }
 });
 
-  fb.child('games/test').once('value',function (snap) {
+  fb.child('games/test').on('value',function (snap) {
     var data = snap.val();
+    $('.move').remove();
     loadBoardState(data);
   });
 
