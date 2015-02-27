@@ -124,12 +124,15 @@
         // $('p#' + panelId).append('<div class="move" data-attr=' + position + '>' + position + '</div>');
       $('p#' + panelId).append('<div class="move"><img src="http://vignette1.wikia.nocookie.net/knightsanddragons/images/c/c2/Peanut-butter-jelly-time.gif"></div>');
       $('p#' + panelId).attr('data-move', position);
+      $('p#' + panelId).css( "background-color", "white" );
+
       }
 
       if (position === 'O') {
         // $('p#' + panelId).append('<div class="move" data-attr=' + position + '>' + position + '</div>');
-      $('p#' + panelId).append('<div class="move"><img src="http://images.clipartpanda.com/peanut-butter-sandwich-no-jelly-1396466202672-tumblr_m1jpelUzm71qbe0gto1_400.gif"></div>');
+      $('p#' + panelId).append('<div class="move"><img src="http://media.giphy.com/media/5xtDarHix76IZAJMHhC/giphy.gif"></div>');
       $('p#' + panelId).attr('data-move', position);
+      $('p#' + panelId).css( "background-color", "white" );
       }
 
     });

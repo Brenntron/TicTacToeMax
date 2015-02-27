@@ -29,6 +29,7 @@ h1 {
   min-width: 100px;
   min-height: 100px;
   width: 100%;
+  box-shadow: 0px 0px 0px;
 }
 
 .heading {
@@ -46,5 +47,11 @@ h1 {
   text-align: center;
   img {
     max-width: 100%;
+    animation: rotateImg 3s infinite;
   }
+}
+
+@-webkit-keyframes rotateImg {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
 }
