@@ -92,6 +92,7 @@
 
         $('.move').remove();
         $('.panel').removeAttr('data-move');
+        $('.panel').css( "background-color", "lightgray" );
 
   }
 
