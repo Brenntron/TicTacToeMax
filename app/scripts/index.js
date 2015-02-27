@@ -3,8 +3,9 @@
 (function(){
 	'use strict';
 
-	var fb      = new Firebase('https://tictactoemax.firebaseio.com/'),
-      $moves;
+	var fb    = new Firebase('https://tictactoemax.firebaseio.com/'),
+	    piece = 'X',
+        $moves;
 
   $('#newGame').on('click', function() {
     newGame();
@@ -33,14 +34,7 @@
 
     $moves = $('.move').length;
 
-    var piece = 'X';
-
-    if (piece === 'X') {
-          piece === 'O'
-    } else {
-          piece === 'X'
-    }
-
+    console.log(piece);
    	if ($('#0').attr('data-move') === piece && $('#1').attr('data-move') === piece && $('#2').attr('data-move') === piece) {
    		alert(piece + ' Wins!');
    		newGame();
@@ -66,6 +60,12 @@
    		alert(piece + ' Wins!');
    		newGame();
    	}
+
+   	if (piece === 'X') {
+          piece = 'O'
+    } else {
+          piece = 'X'
+    }
 });
 
   fb.child('games/test').once('value',function (snap) {
